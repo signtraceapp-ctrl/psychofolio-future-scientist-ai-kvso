@@ -90,6 +90,18 @@ const siteContentInputSchema = z.object({
 
 // ── Resolved type (what pages consume — everything required) ──
 
+export interface SeoData {
+  jobTitle: string;
+  description: string;
+  specialties: string[];
+  credentials: string[];
+  location: string;
+  socialLinks: string[];
+  alumniOf?: string[];
+  openingHours?: string;
+  siteUrl?: string;
+}
+
 export interface SiteContent {
   site: {
     name: string;
@@ -143,6 +155,7 @@ export interface SiteContent {
     formMessage: string;
     formSubmit: string;
   };
+  seo?: SeoData;
 }
 
 // ── Merge helper (same pattern as serene) ──
